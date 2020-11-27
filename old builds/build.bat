@@ -63,9 +63,9 @@ shift
 goto :ARGS_LOOP
 
 :POST_ARGS_LOOP
-REM %MSBUILD% %~dp0\DistroLauncher.sln /t:%_MSBUILD_TARGET% /m /nr:true /p:Configuration=%_MSBUILD_CONFIG%;Platform=x64
-%MSBUILD% %~dp0\DistroLauncher\DistroLauncher.vcxproj /t:Clean,Build /m /nr:true /p:Configuration=Release;Platform=x64
-%MSBUILD% %~dp0\DistroLauncher.sln /t:Clean,Build /m /nr:true /p:Configuration=Release;Platform=x64
+%MSBUILD% %~dp0\DistroLauncher.sln /t:%_MSBUILD_TARGET% /m /nr:true /p:Configuration=%_MSBUILD_CONFIG%;Platform=x64
+REM %MSBUILD% %~dp0\DistroLauncher.sln /t:Build /m /nr:true /p:Configuration=Release;Platform=x64
+REM %MSBUILD% %~dp0\DistroLauncher\DistroLauncher.vcxproj /t:Clean,Build /m /nr:true /p:Configuration=Release;Platform=x64
 
 if (%ERRORLEVEL%) == (0) (
     echo.
